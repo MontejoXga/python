@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">    
+
+    <title>Video</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
+      *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+        font-family: 'Mooli', sans-serif;
+      }
+      body{
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(34, 255, 181, 0.253) 25%,
+          rgba(27, 216, 112, 0.774) 73%,
+        );
+      }
+      html{
+        height: 100%;
+      }
+      .con, li, a {
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+      }
+      .fondo{
+        display: flex;
+        flex-direction: column;
+        background: url('../static/images/fondo.jpg') no-repeat center;
+        height: 80%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        
+      }
+      .opacidad{
+        background-color: rgba(39, 55, 85, 0.45);
+        height: 100%;
+      }
+      
+      h1{
+        margin: 0;
+        padding: 0;
+      }
+
+      .feature-box{
+      display: flex;
+      justify-content:space-between;
+      align-items: center;
+      padding: 30px 5%;
+      }
+      .container{
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 5%;
+      }
+      .back{
+        padding: 32px 0;
+        background-color: rgba(42, 57, 64, 0.9)
+      }
+      .menu{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1000;
+      }
+      .logo{
+        font-size: 24px;
+        color: #15A4F9;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      .menu .navbar ul li{
+        position: relative;
+        float: left;
+        
+      }
+      .menu .navbar ul li a{
+        font-size: 18px;
+        padding: 20px;
+        color: #ffff;
+        display: block;
+      }
+      .menu .navbar ul li a:hover{
+        color: #15A4F9;
+      }
+      #menu{
+        display: none;
+      }
+      .menu-icon{
+        width: 25px;
+      }
+      .menu label{
+        cursor: pointer;
+        display: none;
+      }
+      @media(max-width:670px){
+        .menu{
+          padding: 15px 30px;
+          font-size: 30px;
+          color: #ffff;
+        }
+        .menu label{
+          display: initial;
+        }
+        .back{
+          padding: 30px 0;
+        }
+        .menu .navbar{
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: #2A394f;
+          display: none;
+        }
+        .menu .navbar ul li{
+          width: 100%;
+        }
+        #menu:checked ~ .navbar{
+            display: initial;
+        }
+        .textTitulo{
+            margin-top: 20%;
+        }
+        .texto1 h1{
+            font-size: 40px;
+        }
+        .texto2 h1{
+            font-size: 30px;
+        }
+        .order1{
+          order: 1;
+        }
+        .order2{
+          order: 2;
+        }
+        .sub{
+          height: 12%;
+          font-size: 12px;
+        }
+        .footer{
+          font-size: 10px;
+        }
+
+      }
+      
+      section.col-sm{
+        object-fit: contain;
+        margin:1rem;
+      }
+
+      .contenedor{
+        align-items: center;
+        width: 100%;
+        background-color: rgba(216, 216, 216, 0.6);
+        border-radius: 35px;
+      }
+      
+      .margenes{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 1rem;
+      }
+
+      .margenes img{
+        border-radius: 70px;
+      }
+      .textTitulo{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 5% 30% 5% 2%;
+      }
+      .textTitulo h1{
+        color: #ffff;
+      }
+      .texto1{
+        font-size: 40px;
+      }
+      .texto2{
+        font-size: 30px;
+      }
+      .deteccion{
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10%;
+      }
+      .deteccion div{
+        background-color: #B1365B;
+        padding: 5% 6%;
+        border-radius: 20px;
+        display: grid;
+        gap: 20px;
+        text-align: center;
+      }
+      .deteccion div span{
+        color: #ffff;
+        font-size: 20px;
+      }
+      .deteccion div i {
+        color: white;
+        font-size: 600%;
+      }
+      .inf{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .inf div{
+        flex-grow: 1;
+        flex-basis: 327px;
+      }
+
+      .text1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        gap: 20px;
+        padding:10%;
+        height: 100%;
+        color: #273755;
+        font-size: 15px;
+      }
+      .text2{
+        background-color: rgba(104, 80, 50, 0.4);
+      }
+
+      .contIMG img{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-size: cover;
+      }
+      .sub{
+        background-color: #B4B8B2;
+        height: 10%;
+        padding: 10px 10px;
+        text-align: center;
+      }
+      .sub div{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .cont{
+        width: 100%;
+      }
+      .galeria{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+      .galeria img{
+        width: 0px;
+        flex-grow: 1;
+        flex-basis: 100px;
+        object-fit: cover;
+        transition: .5s ease;
+        
+      }
+      .galeria img:hover{
+        cursor: crosshair;
+        width: 20%;
+        opacity: 1;
+        filter: contrast(120%);
+      }
+      .footer{
+        background-color: #2A394F;
+      }
+      .footer{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        height: auto;
+      }
+      .left{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .right{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+      .right div{
+        flex-grow: 1;
+        flex-basis: 100px;
+        text-align: center;
+        justify-content: center;
+      }
+      .footer span{
+        color: #ffff;
+      }
+
+
+    </style>
+</head>
+<body>
+    <div class="fondo">
+        <div class="opacidad">
+          <div class="back">
+            <div class="menu container">
+              <a href="" class="logo">DEC</a>
+              <input type="checkbox" id="menu">
+              <label for="menu">
+                <i class="fas fa-bars"></i>
+              </label>
+              <nav class="navbar">
+                <ul>
+                  <li><a href="/">Inicio</a></li>
+                  <li><a href="#deteccion">Deteccion</a></li>
+                  <li><a href="/recomendaciones">Recomendaciones</a></li>
+                  <li><a href="/acerca">Acerca de</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="textTitulo">
+              <div class="texto1">
+                  <h1>Detector de Enfermedades de Cacao (DEC)</h1>
+              </div>
+              <div class="texto2">
+                  <h1>Optima presicion y deteccion</h1>
+              </div>
+          </div>
+        </div>
+    </div>
+    <div class="deteccion" id="deteccion">
+        <div>
+            <a href="/FrontPage"><i class="fas fa-upload"></i></a>
+            <span>subir archivo</span>
+        </div>
+        <div>
+            <a href="/webcam"><i class="fas fa-play"></i></a>
+            <span>En vivo</span>
+        </div>
+    </div>
+    <div class="sub">
+      <div>
+        <h1>Principales enfermedades</h1>
+      </div>
+    </div>
+    <div class="inf">
+      <div class="cont">
+        <div class="text1">
+            <h1>Moniliasis</h1>
+            <h2>Presencia de esporas</h2>
+            <h2>Su propagacion requiere de leves corrientes de aire</h2>
+        </div>
+      </div>
+      <div class="contIMG">
+          <img src="../static/images/monilia.jpg" alt="">
+      </div>
+    </div>
+    <div class="inf ">
+      <div class="contIMG order2">
+          <img src="../static/images/fitoftora.jpg" alt="">
+      </div>
+      <div class="cont">
+        <div class="text1 order1">
+            <h1>Fitoftora</h1>
+            <h2>Manchas color chocolate</h2>
+            <h2>Corteza debilitada y vulnerable a diferentes plagas</h2>        
+        </div>
+      </div>
+    </div>
+    <div class="sub">
+      <div>
+        <h2>Su distancia de propagacion esta entre 21 y 42 metros</h2>
+      </div>
+    </div>
+
+    <section class="galeria">
+      <img src="../static//images/moniliasis1.jpg" alt="">
+      <img src="../static/images//fitoftora1.jpg" alt="">
+      <img src="../static/images/moniliasis2.jpg" alt="">
+      <img src="../static//images/fitoftora2.jpg" alt="">
+      <img src="../static/images/moniliasis3.jpg" alt="">
+      <img src="../static/images/fitoftora3.jpg" alt="">
+    </section>
+
+    <footer class="footer">
+        <div class="left">
+            <span>&copy; 2023 Creado por MAMG</span>
+        </div>
+        <div class="right">
+          <div>
+            <span>Llama</span>
+            <br>
+            <span>+51-920-053-828</span>
+          </div>
+          <div>
+            <span>Escribe</span>
+            <br>
+            <span>montejoguevaram0@gmail.com</span>
+          </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>

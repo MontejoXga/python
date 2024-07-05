@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">    
+
+    <title>Recomendaciones</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
+      *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+        font-family: 'Mooli', sans-serif;
+      }
+      body{
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(34, 255, 181, 0.253) 25%,
+          rgba(27, 216, 112, 0.774) 73%,
+        );
+      }
+      html{
+        height: 100%;
+      }
+      .con, li, a {
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+      }
+      .fondo{
+        display: flex;
+        flex-direction: column;
+        background: url('../static/images/fondo.jpg') no-repeat center;
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        
+      }
+      .opacidad{
+        background-color: rgba(39, 55, 85, 0.45);
+        height: 100%;
+      }
+      
+      h1{
+        margin: 0;
+        padding: 0;
+      }
+
+      .feature-box{
+      display: flex;
+      justify-content:space-between;
+      align-items: center;
+      padding: 30px 5%;
+      }
+      .container{
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 5%;
+      }
+      .back{
+        padding: 32px 0;
+        background-color: rgba(42, 57, 64, 0.9)
+      }
+      .menu{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1000;
+      }
+      .logo{
+        font-size: 24px;
+        color: #15A4F9;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      .menu .navbar ul li{
+        position: relative;
+        float: left;
+        
+      }
+      .menu .navbar ul li a{
+        font-size: 18px;
+        padding: 20px;
+        color: #ffff;
+        display: block;
+      }
+      .menu .navbar ul li a:hover{
+        color: #15A4F9;
+      }
+      #menu{
+        display: none;
+      }
+      .menu-icon{
+        width: 25px;
+      }
+      .menu label{
+        cursor: pointer;
+        display: none;
+      }
+      @media(max-width:670px){
+        .menu{
+          padding: 15px 30px;
+          font-size: 30px;
+          color: #ffff;
+        }
+        .menu label{
+          display: initial;
+        }
+        .back{
+          padding: 30px 0;
+        }
+        .menu .navbar{
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: #2A394f;
+          display: none;
+        }
+        .menu .navbar ul li{
+          width: 100%;
+        }
+        #menu:checked ~ .navbar{
+            display: initial;
+        }
+        .textTitulo{
+            margin-top: 20%;
+        }
+        .texto1 h1{
+            font-size: 40px;
+        }
+        .texto2 h1{
+            font-size: 30px;
+        }
+        .card p{
+          color: #ffff;
+          font-size: 20px;
+          margin: 0;
+          padding: 0;
+        }
+        .order1{
+          order: 1;
+        }
+        .order2{
+          order: 2;
+        }
+        .sub{
+          height: 12%;
+          font-size: 12px;
+        }
+        .footer{
+          font-size: 10px;
+        }
+
+      }
+      
+      section.col-sm{
+        object-fit: contain;
+        margin:1rem;
+      }
+
+      .contenedor{
+        align-items: center;
+        width: 100%;
+        background-color: rgba(216, 216, 216, 0.6);
+        border-radius: 35px;
+      }
+      
+      .margenes{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 1rem;
+      }
+
+      .margenes img{
+        border-radius: 70px;
+      }
+      .titulo{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 10% 5%;
+
+      }
+      .titulo .texto1{
+        text-align: center;
+      }
+      .texto2{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .titulo h1{
+        color: #ffff;
+      }
+
+      .texto1{
+        font-size: 40px;
+      }
+      .texto2{
+        font-size: 30px;
+      }
+      .card{
+        flex-grow: 1;
+        flex-basis: 100px;
+      }
+      .card p{
+        color: #ffff;
+      }
+
+
+
+      .footer{
+        background-color: #2A394F;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        height: auto;
+      }
+      .left{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .right{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+      .right div{
+        flex-grow: 1;
+        flex-basis: 100px;
+        text-align: center;
+        justify-content: center;
+      }
+      .footer span{
+        color: #ffff;
+      }
+
+
+    </style>
+</head>
+<body>
+    <div class="fondo">
+        <div class="opacidad">
+          <div class="back">
+            <div class="menu container">
+              <a href="" class="logo">DEC</a>
+              <input type="checkbox" id="menu">
+              <label for="menu">
+                <i class="fas fa-bars"></i>
+              </label>
+              <nav class="navbar">
+                <ul>
+                  <li><a href="/">Inicio</a></li>
+                  <li><a href="/#deteccion">Deteccion</a></li>
+                  <li><a href="/recomendaciones">Recomendaciones</a></li>
+                  <li><a href="/acerca">Acerca de</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="titulo">
+              <div class="texto1">
+                  <h1>Consejos</h1>
+              </div>
+              <div class="texto2">
+                  <div class="card">
+                    <h1>Poda</h1>
+                    <p>La poda mejora la capacidad productriva como a su vez evita la acumulacion de agua
+                    </p>
+                  </div>
+                  <div class="card">
+                    <h1>Desinfeccion</h1>
+                    <p>Separar o tumbar las mazorcas infectadas de las plantas de cacao evitando su proliferacion</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <footer class="footer">
+            <div class="left">
+                <span>&copy; 2023 Creado por MAMG</span>
+            </div>
+            <div class="right">
+              <div>
+                <span>Llama</span>
+                <br>
+                <span>+51-920-053-828</span>
+              </div>
+              <div>
+                <span>Escribe</span>
+                <br>
+                <span>montejoguevaram0@gmail.com</span>
+              </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+</body>
+</html>
